@@ -8,7 +8,7 @@ export async function createSessionClient() {
 
     const session = cookies().get("custom-session");
     if (!session || !session.value) {
-        throw new Error("No Session");
+        throw new Error("No session");
     }
 
     client.setSession(session.value);
