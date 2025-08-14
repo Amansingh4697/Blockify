@@ -8,7 +8,7 @@ export async function createSessionClient() {
 
     const session = cookies().get("custom-session");
     if (!session || !session.value) {
-        throw new Error("No session");
+        throw new Error("No Session");
     }
 
     client.setSession(session.value);
@@ -44,7 +44,6 @@ export async function getLoggedInUser() {
         const { account } = await createSessionClient();
         return await account.get();
     } catch (error) {
-        console.error("Failed to get logged in user", error);
         return null;
     }
 }
